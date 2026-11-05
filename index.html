@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b14" />
+  <title>Nitesh AI Studio — Motion Transfer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">N</span><span>NITESH <b>AI STUDIO</b></span></a>
+    <nav><a href="#studio">Studio</a><a href="#how">How it works</a><a href="#about">About</a></nav>
+    <span class="status"><i></i> AI VIDEO WORKSPACE</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> IMAGE-TO-VIDEO · MOTION TRANSFER</div>
+      <h1>Bring your image<br> <em>to life.</em></h1>
+      <p class="hero-copy">Give your character the movement of a reference video. Create fashion films, dance clips and scroll-stopping promos.</p>
+      <a class="primary-link" href="#studio">Open the studio <span>↘</span></a>
+      <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+      <div class="hero-chip chip-one">✦ Character motion</div><div class="hero-chip chip-two">◉ Creator-ready video</div>
+    </section>
+
+    <section class="studio-section" id="studio">
+      <div class="section-heading"><div><div class="eyebrow">YOUR CREATIVE WORKSPACE</div><h2>Motion <em>studio</em></h2></div><div class="secure-label">⌑ Private upload session</div></div>
+      <div class="workspace">
+        <div class="upload-column">
+          <div class="upload-card" id="imageDrop">
+            <div class="upload-head"><span class="step">01</span><div><h3>Character image</h3><p>Upload the person or model you want to animate.</p></div></div>
+            <label class="dropzone" for="imageInput" id="imageLabel">
+              <div class="upload-icon">▧</div><strong>Drop your image here</strong><span>or <u>browse files</u></span><small>JPG, PNG, WEBP · Up to 100 MB</small>
+              <img id="imagePreview" class="preview hidden" alt="Uploaded character preview">
+            </label>
+            <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+          </div>
+          <div class="upload-card" id="videoDrop">
+            <div class="upload-head"><span class="step">02</span><div><h3>Reference video</h3><p>Use a video whose movement you have permission to use.</p></div></div>
+            <label class="dropzone video-zone" for="videoInput" id="videoLabel">
+              <div class="upload-icon">▶</div><strong>Drop your reference video</strong><span>or <u>browse files</u></span><small>MP4, MOV, WEBM · Up to 100 MB</small>
+              <video id="videoPreview" class="preview hidden" controls></video>
+            </label>
+            <input id="videoInput" type="file" accept="video/mp4,video/quicktime,video/webm" hidden>
+          </div>
+        </div>
+
+        <aside class="settings-card">
+          <div class="settings-title"><div><span class="step">03</span><h3>Generation settings</h3></div><span class="spark">✦</span></div>
+          <div class="field-label">Motion control</div>
+          <p class="fineprint">Body movement and facial performance are guided by your reference video using Runway Act-Two.</p>
+          <div class="field-label">Aspect ratio</div>
+          <div class="choice-row" id="ratioChoices">
+            <button class="choice active" data-value="9:16">9:16 <small>Reels</small></button>
+            <button class="choice" data-value="16:9">16:9 <small>Landscape</small></button>
+            <button class="choice" data-value="1:1">1:1 <small>Square</small></button>
+          </div>
+          <button class="generate-btn" id="generateBtn"><span>✦</span> Generate motion video <b>↗</b></button>
+          <p class="fineprint">Generation requires a connected AI video provider. Uploads are sent to this app's server.</p>
+        </aside>
+      </div>
+      <div class="result-card" id="resultCard" aria-live="polite">
+        <div class="result-icon">✦</div><div><b id="resultTitle">Your creation will appear here</b><p id="resultText">Add both source files to prepare a motion-transfer job.</p></div>
+        <span class="result-state" id="resultState">WAITING</span>
+      </div>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="eyebrow">A SIMPLE CREATIVE FLOW</div><h2>From still to <em>motion.</em></h2>
+      <div class="steps-grid">
+        <article><span>01</span><div class="mini-icon">▧</div><h3>Upload a character</h3><p>Start with a clear, well-lit image of your subject.</p></article>
+        <article><span>02</span><div class="mini-icon">▶</div><h3>Add movement</h3><p>Choose a reference clip with the motion you want to recreate.</p></article>
+        <article><span>03</span><div class="mini-icon">✧</div><h3>Generate & export</h3><p>Render with your connected AI provider, then download the result.</p></article>
+      </div>
+    </section>
+    <footer id="about"><a class="brand" href="#"><span class="brand-mark">N</span><span>NITESH <b>AI STUDIO</b></span></a><span>Made for the next generation of creators.</span><span>© <span id="year"></span> Nitesh AI Studio</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
